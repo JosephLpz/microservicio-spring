@@ -38,19 +38,8 @@ jobs:
           # A file, directory or wildcard pattern that describes what to upload
           path: build/libs
           # The desired behavior if no files are found using the provided path.
-
-  sonarcloud:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
-          fetch-depth: 0
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: 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
-          SONAR_TOKEN: bf32a8e9fa05d97206313fb20e629c7d0d4c74a0
-
-
-
+      - name: Build and analyze
+          run: ./gradlew build jacocoTestReport sonarqube --info
+          env:
+            GITHUB_TOKEN: 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
+            SONAR_TOKEN: bf32a8e9fa05d97206313fb20e629c7d0d4c74a0
