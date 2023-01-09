@@ -47,6 +47,8 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '11'
+    
+    - run: chmod 777 gradlew
     - name: SonarCloud Scan
       uses: jinguji/sonarcloud-gradle-github-action@v2
       with:
