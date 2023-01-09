@@ -38,7 +38,18 @@ jobs:
           # A file, directory or wildcard pattern that describes what to upload
           path: build/libs
           # The desired behavior if no files are found using the provided path.
-      - name: Official SonarQube Scan
-        # You may pin to the exact commit or the version.
-        # uses: SonarSource/sonarqube-scan-action@a6ba0aafc293e03de5437af7edbc97f7d3ebc91a
-        uses: SonarSource/sonarqube-scan-action@v1.2.0
+          
+  sonarCloudTrigger:
+    name: SonarCloud Trigger
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+    - name: SonarCloud Scan
+      uses: jinguji/sonarcloud-gradle-github-action@v2
+      with:
+        sonar-token: bf32a8e9fa05d97206313fb20e629c7d0d4c74a0
+      env:
+        GITHUB_TOKEN: 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
