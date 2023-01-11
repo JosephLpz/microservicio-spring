@@ -54,7 +54,8 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'devops-fundation-test-docker'
-    repository: 'devops-fundation-test'
+    repository: 'josephlpz/devops-fundation-test'
     command: 'push'
     tags: 'latest'
+  displayName: 'push docker'
 
