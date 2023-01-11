@@ -9,6 +9,7 @@ trigger:
 pool: 'Default'
 
 steps:
+- script: chmod +x gradlew 
 - task: Gradle@3
   inputs:
     gradleWrapperFile: 'gradlew'
