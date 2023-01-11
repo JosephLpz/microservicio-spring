@@ -43,9 +43,11 @@ jacocoTestReport {
 		html.enabled true
 		xml.enabled true
   }
-  afterEvaluate {
-	classDirectories.setFrom(files(classDirectories.files.collect {
-		fileTree(dir: it, exclude: 'com.example.testingweb.TestingWebApplication')
-	}))
-}
+	afterEvaluate {
+		classDirectories.setFrom(files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					"com/example/testingweb/TestingWebApplication.class"
+			])
+		}))
+	}
 }
