@@ -28,7 +28,7 @@ test {
 jacocoTestReport {
   dependsOn test
   	reports {
-	html.enable true
-	xml.enable true
+		html.enabled true
+		xml.enabled true
   }
 }
