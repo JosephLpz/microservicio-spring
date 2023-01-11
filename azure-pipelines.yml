@@ -23,9 +23,10 @@ steps:
 
 - task: PublishCodeCoverageResults@1
   inputs:
-    codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/microservicio-spring/**/site/cobertura/coverage.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/microservicio-spring/**/site/cobertura/jacoco-report.html'
+    codeCoverageTool: 'JaCoco'
+    summaryFileLocation: '$ (Build.SourcesDirectory)/build/reports/jacoco/test/jacocoTestReport.xml'
+    reportDirectory: '$(Build.SourcesDirectory)/**/reports/jacoco/test/html'
+ displayName: Pruebas •unitarias
 
 - task: SonarCloudPrepare@1
   inputs:
