@@ -18,7 +18,7 @@ jacocoTestCoverageVerification {
 			element = 'CLASS'
 			excludes = ['com.example.testingweb.TestingWebApplication']
 			limit {
-				minimum = 0.7
+				minimum = 0.85
 			}
 		}
 	}
