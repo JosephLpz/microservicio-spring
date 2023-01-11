@@ -12,6 +12,18 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = 'CLASS'
+			excludes = ['com.example.testingweb.TestingWebApplication']
+			limit {
+				minimum = 0.7
+			}
+		}
+	}
+}
+
 repositories {
 	mavenCentral()
 }
@@ -31,4 +43,9 @@ jacocoTestReport {
 		html.enabled true
 		xml.enabled true
   }
+  afterEvaluate {
+	classDirectories.setFrom(files(classDirectories.files.collect {
+		fileTree(dir: it, exclude: 'com.example.testingweb.TestingWebApplication')
+	}))
+}
 }

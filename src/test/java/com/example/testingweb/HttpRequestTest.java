@@ -20,7 +20,7 @@ public class HttpRequestTest {
 	private TestRestTemplate restTemplate;
 
 	@Test
-	public void greetingShouldReturnDefaultMessage() throws Exception {
+	public void greetingShouldReturnDefaultMessage(){
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
 				String.class)).contains("Finaliza el curso DevOps Foundation v3 - Joseph López");
 	}
