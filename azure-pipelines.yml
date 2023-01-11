@@ -24,8 +24,16 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '/Users/josephlpz/documents/Archivos_Diplomado_DevSecOps/agent-azure/agente/_work/1/s/build/reports/jacoco/test/jacocoTestReport.xml'
-    reportDirectory: '/Users/josephlpz/documents/Archivos_Diplomado_DevSecOps/agent-azure/agente/_work/1/s/build/reports/jacoco/test/html'
+    summaryFileLocation: '$(Build.SourcesDirectory)/build/reports/jacoco/test/jacocoTestReport.xml'
+    reportDirectory: '$(Build.SourcesDirectory)\build\reports\jacoco\test\html'
+
+- task: BuildQualityChecks@8
+  inputs:
+    checkCoverage: true
+    coverageFailOption: 'fixed'
+    coverageType: 'lines'
+    coverageThreshold: '85'
+  displayName: 'Build and Quality'
 
 - task: SonarCloudPrepare@1
   inputs:
