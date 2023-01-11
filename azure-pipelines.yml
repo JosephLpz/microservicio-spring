@@ -25,7 +25,7 @@ steps:
   inputs:
     codeCoverageTool: 'Jacoco'
     summaryFileLocation: '$(Build.SourcesDirectory)\build\reports\jacoco\test\jacocoTestReport.xml'
-    reportDirectory: '$(Build.SourcesDirectory)\build\reports\jacoco\test\html'
+    #reportDirectory: '$(Build.SourcesDirectory)\build\reports\jacoco\test\html'
 
 - task: SonarCloudPrepare@1
   inputs:
