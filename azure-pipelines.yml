@@ -42,3 +42,19 @@ steps:
     spotBugsAnalysis: false
   displayName: 'SonarQube Analysis'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'devops-fundation-test-docker'
+    repository: 'devops-fundation-test'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
+  displayName: 'build docker'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'devops-fundation-test-docker'
+    repository: 'devops-fundation-test'
+    command: 'push'
+    tags: 'latest'
+
