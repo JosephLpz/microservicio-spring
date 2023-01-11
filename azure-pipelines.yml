@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- feature-ms-josephlopez-Finaliza-el-curso-DevOps-foundation-v3-josephlopez
+- 'feature-ms-josephlopez-Finaliza-el-curso-DevOps-foundation-v3-josephlopez'
 
 pool: 'Default'
 
@@ -23,9 +23,9 @@ steps:
 
 - task: PublishCodeCoverageResults@1
   inputs:
-    codeCoverageTool: 'Jacoco'
+    codeCoverageTool: 'JaCoCo'
     summaryFileLocation: '$(Build.SourcesDirectory)\build\reports\jacoco\test\jacocoTestReport.xml'
-    #reportDirectory: '$(Build.SourcesDirectory)\build\reports\jacoco\test\html'
+    reportDirectory: '$(Build.SourcesDirectory)\build\reports\jacoco\test\html'
 
 - task: SonarCloudPrepare@1
   inputs:
