@@ -59,3 +59,13 @@ steps:
     tags: 'latest'
   displayName: 'push docker'
 
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'None'
+    namespace: 'default'
+    command: 'apply'
+    arguments: '-f deployment-app.yaml'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+  displayName: 'kubernetes deploy'
+
