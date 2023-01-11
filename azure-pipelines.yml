@@ -30,9 +30,10 @@ steps:
 - task: BuildQualityChecks@8
   inputs:
     checkCoverage: true
-    coverageFailOption: 'build'
-    coverageType: 'blocks'
-    coveragePrecision: '85'
+    coverageFailOption: 'fixed'
+    coverageType: 'lines'
+    coverageThreshold: '85'
+  displayName: 'Build and Quality'
 
 - task: SonarCloudPrepare@1
   inputs:
