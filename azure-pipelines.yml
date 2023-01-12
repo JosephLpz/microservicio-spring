@@ -88,7 +88,7 @@ steps:
   inputs:
     connectionType: 'None'
     command: 'expose'
-    arguments: 'deployment testing-web-deployment --type=NodePort --name=testing-web-expose'
+    arguments: 'deployment microservicio-spring-deployment --type=NodePort --name=microservicio-spring-expose'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
   displayName: Creación NodePort
