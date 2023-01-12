@@ -12,7 +12,7 @@ public class GreetingTest {
     @Autowired
     private GreetingService greetingService;
 
-   /* @Test
+    @Test
     public void greetingServiceTest(){
         assertThat(greetingService.greet()).isEqualTo("Finaliza el curso DevOps Foundation v3 - Joseph López");
     }
@@ -22,5 +22,5 @@ public class GreetingTest {
         assertThat(greetingService.greet()).isNotNull();
         assertThat(greetingService.greet()).isNotEmpty();
         assertThat(greetingService.greet()).isNotBlank();
-    }*/
+    }
 }

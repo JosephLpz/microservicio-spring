@@ -19,9 +19,9 @@ public class HttpRequestTest {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	/*@Test
+	@Test
 	public void greetingShouldReturnDefaultMessage(){
 		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
 				String.class)).contains("Finaliza el curso DevOps Foundation v3 - Joseph López");
-	}*/
+	}
 }

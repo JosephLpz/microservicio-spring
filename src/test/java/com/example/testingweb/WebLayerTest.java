@@ -19,10 +19,10 @@ public class WebLayerTest {
 	@Autowired
 	private MockMvc mockMvc;
 
-	/*@Test
+	@Test
 	public void shouldReturnDefaultMessage() throws Exception {
 		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Finaliza el curso DevOps Foundation v3 - Joseph López")));
-	}*/
+	}
 }
 //end::test[]

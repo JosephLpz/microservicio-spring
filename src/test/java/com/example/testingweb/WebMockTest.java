@@ -23,10 +23,10 @@ public class WebMockTest {
 	@MockBean
 	private GreetingService service;
 
-	/*@Test
+	@Test
 	public void greetingShouldReturnMessageFromService() throws Exception {
 		when(service.greet()).thenReturn("Finaliza el curso DevOps Foundation v3 - Joseph López");
 		this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Finaliza el curso DevOps Foundation v3 - Joseph López")));
-	}*/
+	}
 }
