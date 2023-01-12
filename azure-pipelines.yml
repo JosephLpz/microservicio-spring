@@ -80,5 +80,16 @@ steps:
     namespace: 'default'
     command: 'apply'
     arguments: '-f deployment-app.yaml'
-  displayName: 'kubernetes deploy'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+  displayName: Deployment Kubernetes
+
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'None'
+    command: 'expose'
+    arguments: 'deployment testing-web-deployment --type=NodePort --name=testing-web-expose'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+  displayName: Creación NodePort
 
